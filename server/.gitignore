@@ -1,0 +1,14 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore logs directory and all contents
+logs/*
+
+# Ignore cache directory and all contents
+.cache/*
+
+# Ignore all files/folders with a ".env" extension
+*.env
+
+# Ignore a specific file named secrets.yml
+secrets.yml
