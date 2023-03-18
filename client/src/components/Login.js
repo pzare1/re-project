@@ -3,11 +3,9 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 function SignUp() {
-  const navigate = useNavigate();
+
   const [error, seterror] = useState("");
   const [data, setdata] = useState({
-    firstName: "",
-    lastName: "",
     email: "",
     password: "",
   });
@@ -17,10 +15,10 @@ function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:8040/api/users";
+      const url = "http://localhost:8040/api/auth";
       const { data: res } = await axios.post(url,data);
-      navigate("/login");
-      console.log(res.message);
+      localStorage.setItem("token",res.data);
+      window.location= "/"
     } catch (error) {
       if (
         error.response &&
@@ -40,45 +38,9 @@ function SignUp() {
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
-              Create and account
+              Login to your account
             </h1>
             <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
-              <div>
-                <label
-                  for="firstName"
-                  className="block mb-2 text-sm font-medium text-gray-900 "
-                >
-                  Your FirstName
-                </label>
-                <input
-                  type="text"
-                  onChange={handleChange}
-                  value={data.firstName}
-                  name="firstName"
-                  id="firstName"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                  placeholder="John"
-                  required=""
-                />
-              </div>
-              <div>
-                <label
-                  for="lastName"
-                  className="block mb-2 text-sm font-medium text-gray-900 "
-                >
-                  Your LastName
-                </label>
-                <input
-                  type="text"
-                  onChange={handleChange}
-                  value={data.lastName}
-                  name="lastName"
-                  id="lastName"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                  placeholder="Smith"
-                  required=""
-                />
-              </div>
               <div>
                 <label
                   for="email"
@@ -127,12 +89,12 @@ function SignUp() {
                 type="submit"
                 className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 bg-blue-600 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
               >
-                Create an account
+                Login
               </button>
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                Already have an account?{" "}
+                New Here?{" "}
                 <Link
-                  to="/login"
+                  to="/signup"
                   className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                 >
                   Login here
