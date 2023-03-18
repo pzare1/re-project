@@ -1,5 +1,3 @@
-// server.js
-
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -15,7 +13,7 @@ connectDB();
 app.use(express.json());
 app.use(cors());
 
-//routes
+//add routes
 
 app.use("/api/users",userRoutes);
 app.use("/api/auth",authRoutes);
