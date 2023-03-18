@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function SignUp() {
 
@@ -97,7 +97,7 @@ function SignUp() {
                   to="/signup"
                   className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                 >
-                  Login here
+                  Sign up
                 </Link>
               </p>
             </form>
