@@ -11,9 +11,11 @@ function SignUp() {
     email: "",
     password: "",
   });
+  //htmlFor getting the values from each input
   const handleChange = ({ currentTarget: input }) => {
     setdata({ ...data, [input.name]: input.value });
   };
+  //htmlFor sending data to backend 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -32,7 +34,7 @@ function SignUp() {
     }
   };
   return (
-    <section className="bg-gray-50 dark:bg-gray-900">
+    <section className="bg-gray-50">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <h2 className="flex items-center mb-6 text-2xl font-semibold text-gray-900 text-2xl text-blue-600">
           Fullstack-project
@@ -45,7 +47,7 @@ function SignUp() {
             <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
-                  for="firstName"
+                  htmlFor="firstName"
                   className="block mb-2 text-sm font-medium text-gray-900 "
                 >
                   Your FirstName
@@ -63,7 +65,7 @@ function SignUp() {
               </div>
               <div>
                 <label
-                  for="lastName"
+                  htmlFor="lastName"
                   className="block mb-2 text-sm font-medium text-gray-900 "
                 >
                   Your LastName
@@ -81,7 +83,7 @@ function SignUp() {
               </div>
               <div>
                 <label
-                  for="email"
+                  htmlFor="email"
                   className="block mb-2 text-sm font-medium text-gray-900 "
                 >
                   Your email
@@ -99,7 +101,7 @@ function SignUp() {
               </div>
               <div>
                 <label
-                  for="password"
+                  htmlFor="password"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Password

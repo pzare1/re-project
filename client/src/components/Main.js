@@ -8,8 +8,10 @@ function Main() {
   }
   return (
     <>
+    <section  className='bg-gray-50'>
+    <button onClick={handleLogout} className=' bg-blue-600 text-white text-md p-2 mx-auto items-center w-full'>Logout</button>
     <CustomForm/>
-    <button onClick={handleLogout} className=' bg-red-600 text-white text-xl p-3 mx-auto items-center'>Logout</button>
+    </section>
     </>
   )
 }
