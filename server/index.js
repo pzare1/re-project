@@ -14,11 +14,10 @@ app.use(express.json());
 app.use(cors());
 
 //add routes
-
 app.use("/api/users",userRoutes);
 app.use("/api/auth",authRoutes);
 
-const PORT = process.env.PORT || 8030;
+const PORT = process.env.PORT || 2010;
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}.`);

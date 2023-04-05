@@ -15,7 +15,7 @@ function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:8040/api/auth";
+      const url = "http://localhost:2040/api/auth";
       const { data: res } = await axios.post(url,data);
       localStorage.setItem("token",res.data);
       window.location= "/"
@@ -43,7 +43,7 @@ function SignUp() {
             <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
-                  for="email"
+                  htmlFor="email"
                   className="block mb-2 text-sm font-medium text-gray-900 "
                 >
                   Your email
@@ -61,7 +61,7 @@ function SignUp() {
               </div>
               <div>
                 <label
-                  for="password"
+                  htmlFor="password"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Password

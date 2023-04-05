@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 function CustomForm() {
   const [task, setTask] = useState("");
   const [tasks, setTasks] = useState([]);
-
+  // get on change event from inputs
   const handleChange = (event) => {
     setTask(event.target.value);
   };
